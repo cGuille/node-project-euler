@@ -2,8 +2,8 @@
 (function () {
     'use strict';
 
-    Array.prototype.product = function array_product() {
-        return this.reduce(function (product, item) {
+    Array.prototype.product = function array_product(begin, end) {
+        return this.slice(begin, end).reduce(function (product, item) {
             return product * item;
         });
     };
@@ -14,15 +14,11 @@
         i, max, currentProduct;
 
     for (i = 0; max = arrayData.length - 5, i < max; ++i) {
-        currentProduct = productOfFiveNext(arrayData, i);
+        currentProduct = arrayData.product(i, i + 5);
         if (maxProduct < currentProduct) {
             maxProduct = currentProduct;
         }
     }
 
     console.log(maxProduct);
-
-    function productOfFiveNext(array, index) {
-        return array.slice(index, index + 5).product();
-    }
 }());
