@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 (function () {
     'use strict';
 
@@ -16,7 +17,8 @@
 
     if (argc < 3) {
         console.error('Error: this command needs at least 3 arguments.');
-        console.error('Usage: node problem1.js <multiple>[ <multiples…>] <from> <to>');
+        console.error('Usage: ' + process.argv[0] + ' ' + process.argv[1] + ' <multiple>[ <multiples…>] <from> <to>');
+        console.error('Arguments to get the Project Euler answer: "3 5 1 1000".');
         process.exit(1);
     }
 

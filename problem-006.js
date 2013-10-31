@@ -7,7 +7,8 @@
 
     if (argc !== 1) {
         console.error('Error: this command needs 1 argument.');
-        console.error('Usage: node problem6.js <limit>');
+        console.error('Usage: ' + process.argv[0] + ' ' + process.argv[1] + ' <limit>');
+        console.error('Arguments to get the Project Euler answer: "100".');
         process.exit(1);
     }
 

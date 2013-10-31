@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 (function () {
     'use strict';
 
@@ -16,7 +17,8 @@
 
     if (argc !== 2) {
         console.error('Error: this command needs 2 arguments.');
-        console.error('Usage: node problem5.js <from> <to>');
+        console.error('Usage: ' + process.argv[0] + ' ' + process.argv[1] + ' <from> <to>');
+        console.error('Arguments to get the Project Euler answer: "1 20".');
         process.exit(1);
     }
 
