@@ -16,7 +16,7 @@
 
     if (argc !== 2) {
         console.error('Error: this command needs 2 arguments.');
-        console.error('Usage: node problem2.js <from> <to>');
+        console.error('Usage: node problem5.js <from> <to>');
         process.exit(1);
     }
 
