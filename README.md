@@ -3,7 +3,7 @@ node-project-euler
 
 I'll put there my answers to the Project Euler problems (see http://projecteuler.net/).
 
-Event though these scripts are for a "one shot purpose", I'll try to write nice JavaScript code.
+Even though these scripts are for a "one shot purpose", I'll try to write nice JavaScript code.
 
 The algorithms I'm writing may not be interesting (in terms of complexity) since I'm not that good in maths, and the problems of Project Euler are mathematical.
 
