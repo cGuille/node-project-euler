@@ -2,9 +2,15 @@
 (function () {
     'use strict';
 
+    /**
+     * Compute the product of every array item
+     * @param  {number} (optional) begin index of the first element to compute
+     * @param  {number} (optional) end   index of the last element (excluded)
+     * @return {number}       the product, or null if empty
+     */
     Array.prototype.product = function array_product(begin, end) {
         if (!this.length) {
-            return 0;
+            return null;
         }
         return this.slice(begin, end).reduce(function (product, item) {
             return product * item;
