@@ -3,7 +3,20 @@
 
     var exports = module.exports = {};
 
+    exports.fibonacci = fibonacci;
     exports.primes = primes;
+
+    function fibonacci() {
+        var previous = 0,
+            current = 1;
+
+        return function fibonacciGenerator() {
+            var next = previous + current;
+            previous = current;
+            current = next;
+            return next;
+        };
+    }
 
     /**
      * Create a prime numbers generator, which yeld

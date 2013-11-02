@@ -12,6 +12,13 @@
         return (this % multiple) === 0;
     };
 
+    try {
+        var fibonacci = require('./generators').fibonacci();
+    } catch (error) {
+        console.error('missing dependency:', error);
+        process.exit(1);
+    }
+
     var argv = process.argv.slice(2),
         argc = argv.length;
 
@@ -33,31 +40,16 @@
      * @return {number}
      */
     function sumOfEvenFibonacciBelow(limit) {
-        var sum = 0;
+        var sum = 0,
+            f = fibonacci();
 
-        fibonacci(function (value) {
-            if (value.isMultipleOf(2)) {
-                sum += value;
+        while (f < limit) {
+            if (f.isMultipleOf(2)) {
+                sum += f;
             }
-            return value <= limit;
-        });
+            f = fibonacci();
+        }
 
         return sum;
-    }
-
-    /**
-     * Feed the callback with fibonacci numbers while it returns true
-     * @param  {Function} callback
-     */
-    function fibonacci(callback) {
-        var beforePrevious = 0,
-            previous = 1,
-            current = beforePrevious + previous;
-
-        while (true === callback(current)) {
-            beforePrevious = previous;
-            previous = current;
-            current = beforePrevious + previous;
-        }
     }
 }());
