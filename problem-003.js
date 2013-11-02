@@ -2,25 +2,11 @@
 (function () {
     'use strict';
 
-    /**
-     * Compute the product of every array item
-     * @param  {number} (optional) begin index of the first element to compute
-     * @param  {number} (optional) end   index of the last element (excluded)
-     * @return {number}       the product, or null if empty
-     */
-    Array.prototype.product = function array_product(begin, end) {
-        if (!this.length) {
-            return null;
-        }
-        return this.slice(begin, end).reduce(function (product, item) {
-            return product * item;
-        });
-    };
-
     try {
-        var primes = require('./generators').primes;
+        require('./lib/proto.js');
+        var primes = require('./lib/generators').primes;
     } catch (error) {
-        console.error('missing dependency:', error);
+        console.error(error.message);
         process.exit(1);
     }
 

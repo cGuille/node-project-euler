@@ -2,11 +2,11 @@
 (function () {
     'use strict';
 
-    // Polyfill for Number.isInteger()
-    if (!Number.isInteger) {
-        Number.isInteger = function isInteger (nVal) {
-            return typeof nVal === "number" && isFinite(nVal) && nVal > -9007199254740992 && nVal < 9007199254740992 && Math.floor(nVal) === nVal;
-        };
+    try {
+        require('./lib/proto.js');
+    } catch (error) {
+        console.error(error.message);
+        process.exit(1);
     }
 
     var i, j,

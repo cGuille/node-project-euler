@@ -2,20 +2,11 @@
 (function () {
     'use strict';
 
-    /**
-     * Extends the Number prototype, providing a method to check whether the
-     * the number is a multiple of the given number or not
-     * @param  {number}  multiple
-     * @return {Boolean}
-     */
-    Number.prototype.isMultipleOf = function isMultipleOf(multiple) {
-        return (this % multiple) === 0;
-    };
-
     try {
-        var fibonacci = require('./generators').fibonacci();
+        require('./lib/proto.js');
+        var fibonacci = require('./lib/generators').fibonacci();
     } catch (error) {
-        console.error('missing dependency:', error);
+        console.error(error.message);
         process.exit(1);
     }
 

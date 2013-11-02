@@ -3,9 +3,9 @@
     'use strict';
 
     try {
-        var primes = require('./generators').primes;
+        var primes = require('./lib/generators').primes;
     } catch (error) {
-        console.error('missing dependency:', error);
+        console.error(error.message);
         process.exit(1);
     }
 
